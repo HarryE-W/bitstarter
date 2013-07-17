@@ -1,7 +1,7 @@
 /* Large desktop */
 @media (min-width: 980px) { 
   body {
-   padding-top: 60px;
+   padding-top: 80px;
   }
  .linediv-l {
    border-right: 1px white solid;
@@ -30,13 +30,17 @@
 body{
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
-.heading, .subheading {
+.subheading {
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  text-align: center; 
+}
+ .heading {
+  font-family: 'Kaushan Script', cursive;
   text-align: center;
 }
 p.lead {
   padding-top: 1.5%;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 30px;
 }
 p {
