@@ -17,6 +17,60 @@
           rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" type="text/css" href="css/flashblock.css" />
+    <link rel="stylesheet" type="text/css" href="css/360player.css" />
+    <link rel="stylesheet" type="text/css" href="css/360player-visualization.css" />
+    <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="js/berniecode-animator.js"></script>
+    <script type="text/javascript" src="js/soundmanager2.js"></script>
+    <script type="text/javascript" src="js/360player.js"></script>
+    
+    <script type="text/javascript">
+
+    soundManager.setup({
+        // path to directory containing SM2 SWF
+        url: 'swf/'
+    });
+
+    threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i)?false:true);
+    threeSixtyPlayer.config.showHMSTime = true;
+
+    // enable some spectrum stuffs
+
+    threeSixtyPlayer.config.useWaveformData = true;
+    threeSixtyPlayer.config.useEQData = true;
+
+    // enable this in SM2 as well, as needed
+
+    if (threeSixtyPlayer.config.useWaveformData) {
+        soundManager.flash9Options.useWaveformData = true;
+    }
+    if (threeSixtyPlayer.config.useEQData) {
+        soundManager.flash9Options.useEQData = true;
+    }
+    if (threeSixtyPlayer.config.usePeakData) {
+        soundManager.flash9Options.usePeakData = true;
+    }
+
+    if (threeSixtyPlayer.config.useWaveformData || threeSixtyPlayer.flash9Options.useEQData || threeSixtyPlayer.flash9Options.usePeakData) {
+        // even if HTML5 supports MP3, prefer flash so the visualization features can be used.
+        soundManager.preferFlash = true;
+    }
+
+    // favicon is expensive CPU-wise, but can be used.
+    if (window.location.href.match(/hifi/i)) {
+        threeSixtyPlayer.config.useFavIcon = true;
+    }
+
+    if (window.location.href.match(/html5/i)) {
+        // for testing IE 9, etc.
+        soundManager.useHTML5Audio = true;
+    }
+
+    </script>
+
+    
   </head>
   <body>
 
@@ -118,7 +172,12 @@
       <!-- http://placehold.it -->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
-          <img class="img-polaroid" src="http://i.imgur.com/u5AAmBj.jpg">
+            <div id="sm2-container">
+    		    <!-- sm2 flash goes here -->
+		    </div>
+            <div class="sm2-inline-list">
+            <div class="ui360 ui360-vis"><a href="music/SoundSample.mp3">Shape of Sting's Heart - Electric Cello</a></div>
+            </div>
         </div>
         <div class="span5 copy">
           <p>
@@ -199,7 +258,7 @@
                 </div>
                 <div id="collapseThree" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    I will be uploading some sound samples shortly.
+                    Listen to the sound sample above!
                   </div>
                 </div>
               </div>
