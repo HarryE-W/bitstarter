@@ -92,7 +92,7 @@
  *line-height:480px; /* IE again */
  text-align:center;
  border-radius:0px;
- background-color:#25e3bf;
+ background-color:#51b2db;
 }
 
 .sm2-inline-list .ui360 a:hover {
@@ -107,7 +107,7 @@
 }
 
 .sm2-inline-list .ui360-vis:hover a.sm2_link {
- background-color:#25e3bf;
+ background-color:#51b2db;
  *background-color:transparent; /* eh, screw IE. */
 }
 
